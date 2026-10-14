@@ -3,57 +3,40 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>5 18 Treni | Okul Dergisi</title>
+    <title>Dergiler | 5 18 Treni</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <script>
         tailwind.config = {
             theme: {
                 extend: {
-                    fontFamily: {
-                        sans: ['"Plus Jakarta Sans"', 'sans-serif'],
-                    },
-                    colors: {
-                        railway: {
-                            50: '#f4f6f8',
-                            100: '#e2e8f0',
-                            600: '#2c3e50',
-                            700: '#1a252f',
-                            accent: '#d35400',
-                        }
-                    }
+                    fontFamily: { sans: ['"Plus Jakarta Sans"', 'sans-serif'] },
+                    colors: { railway: { 50: '#f4f6f8', 100: '#e2e8f0', 600: '#2c3e50', 700: '#1a252f', accent: '#d35400' } }
                 }
             }
         }
     </script>
 </head>
-<body class="bg-railway-50 text-railway-700 font-sans antialiased selection:bg-railway-accent selection:text-white">
+<body class="bg-railway-50 text-railway-700 font-sans antialiased">
 
-    <!-- ÜST BAR VE YAN ÇUBUK TETİKLEYİCİSİ -->
-    <header class="fixed top-0 left-0 right-0 z-45 bg-white/90 backdrop-blur-md border-b border-gray-200 shadow-sm">
+    <!-- ÜST BAR -->
+    <header class="fixed top-0 left-0 right-0 z-40 bg-white/90 backdrop-blur-md border-b border-gray-200 shadow-sm">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex items-center justify-between h-20">
                 <div class="flex items-center gap-4">
-                    <button onclick="toggleSidebar()" class="p-2 rounded-xl text-railway-700 hover:bg-gray-100 transition-colors focus:outline-none" aria-label="Menüyü Aç">
-                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
-                        </svg>
+                    <button onclick="toggleSidebar()" class="p-2 rounded-xl text-railway-700 hover:bg-gray-100 transition-colors">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
                     </button>
                     <div class="flex items-center gap-3">
                         <span class="w-10 h-10 rounded-xl bg-railway-700 text-white flex items-center justify-center font-bold text-xl shadow-md">5</span>
-                        <a href="index.html" class="text-xl font-bold tracking-tight text-railway-700 hover:text-railway-accent transition-colors">
-                            5 18 Treni
-                        </a>
+                        <a href="index.html" class="text-xl font-bold tracking-tight text-railway-700 hover:text-railway-accent transition-colors">5 18 Treni</a>
                     </div>
-                </div>
-                <div class="hidden sm:block text-xs font-semibold text-gray-500 uppercase tracking-widest">
-                    Okul Edebiyat Dergisi
                 </div>
             </div>
         </div>
     </header>
 
-    <!-- SOL YAN ÇUBUK (SIDEBAR) - FARKLI SAYFA GEÇİŞLERİ İLE -->
+    <!-- YAN ÇUBUK -->
     <div id="sidebarOverlay" class="fixed inset-0 bg-black/50 backdrop-blur-sm z-50 hidden transition-opacity" onclick="toggleSidebar()"></div>
     <aside id="sidebar" class="fixed top-0 left-0 bottom-0 w-80 bg-white z-50 shadow-2xl transform -translate-x-full transition-transform duration-300 ease-in-out flex flex-col">
         <div class="p-6 border-b border-gray-100 flex items-center justify-between">
@@ -65,71 +48,85 @@
                 <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
             </button>
         </div>
-
         <nav class="p-6 space-y-3 flex-1">
-            <a href="index.html" class="flex items-center gap-3 px-4 py-3 rounded-xl text-railway-700 font-medium hover:bg-railway-50 hover:text-railway-accent transition-colors">
-                <svg class="w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/></svg>
-                Ana Sayfa
-            </a>
-            <a href="hakkimizda.html" class="flex items-center gap-3 px-4 py-3 rounded-xl text-railway-700 font-medium hover:bg-railway-50 hover:text-railway-accent transition-colors">
-                <svg class="w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
-                Hakkımızda
-            </a>
-            <a href="dergiler.html" class="flex items-center gap-3 px-4 py-3 rounded-xl text-railway-700 font-medium hover:bg-railway-50 hover:text-railway-accent transition-colors">
-                <svg class="w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/></svg>
-                Dergiler
-            </a>
-            <a href="emege-gecenler.html" class="flex items-center gap-3 px-4 py-3 rounded-xl text-railway-700 font-medium hover:bg-railway-50 hover:text-railway-accent transition-colors">
-                <svg class="w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/></svg>
-                Emeği Geçenler
-            </a>
+            <a href="index.html" class="flex items-center gap-3 px-4 py-3 rounded-xl text-railway-700 font-medium hover:bg-railway-50 transition-colors">Ana Sayfa</a>
+            <a href="hakkimizda.html" class="flex items-center gap-3 px-4 py-3 rounded-xl text-railway-700 font-medium hover:bg-railway-50 transition-colors">Hakkımızda</a>
+            <a href="dergiler.html" class="flex items-center gap-3 px-4 py-3 rounded-xl bg-railway-50 text-railway-accent font-medium transition-colors">Dergiler</a>
+            <a href="emege-gecenler.html" class="flex items-center gap-3 px-4 py-3 rounded-xl text-railway-700 font-medium hover:bg-railway-50 transition-colors">Emeği Geçenler</a>
         </nav>
-
-        <div class="p-6 border-t border-gray-100 text-xs text-gray-400 text-center">
-            5 18 Treni © 2026
-        </div>
     </aside>
 
-    <!-- ANA İÇERİK -->
-    <main class="pt-20">
-        <section class="relative min-h-[90vh] flex items-center justify-center text-center px-4 sm:px-6 lg:px-8 overflow-hidden">
-            <div class="absolute inset-0 z-0">
-                <img src="https://images.unsplash.com/photo-1474487548417-781cb71495f3?q=80&w=1920&auto=format&fit=crop" alt="Nostaljik Tren" class="w-full h-full object-cover">
-                <div class="absolute inset-0 bg-gradient-to-t from-railway-700/90 via-railway-700/60 to-black/40"></div>
-            </div>
+    <!-- İÇERİK -->
+    <main class="pt-32 pb-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="mb-12">
+            <h1 class="text-3xl sm:text-4xl font-extrabold text-railway-700">Dergi Sayılarımız</h1>
+            <p class="text-gray-500 mt-2">Arşivdeki tüm sayılarımıza göz atın ve site içinde okumaya başlayın.</p>
+        </div>
 
-            <div class="relative z-10 max-w-3xl mx-auto space-y-6 text-white py-20">
-                <span class="inline-block bg-railway-accent/80 text-white text-xs font-bold tracking-widest uppercase px-4 py-1.5 rounded-full shadow-md">
-                    Okul Edebiyat ve Kültür Dergisi
-                </span>
-                <h1 class="text-4xl sm:text-6xl font-extrabold tracking-tight drop-shadow-md">
-                    Yolculuk Kelimelerle Başlar
-                </h1>
-                <p class="text-lg sm:text-xl text-gray-200 font-light max-w-2xl mx-auto drop-shadow">
-                    5 18 Treni; genç yazarların, şairlerin ve hayal kuranların buluşma noktası. Vagonumuza sen de katıl.
-                </p>
-                <div class="pt-4 flex justify-center gap-4">
-                    <a href="dergiler.html" class="bg-railway-accent text-white px-8 py-3.5 rounded-full font-semibold shadow-lg hover:bg-orange-600 transition-all transform hover:-translate-y-0.5">
-                        Sayıları İncele
-                    </a>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <!-- SAYI 1 KUTUSU -->
+            <div class="bg-white rounded-2xl overflow-hidden shadow-md border border-gray-200 flex flex-col justify-between">
+                <div>
+                    <div class="h-52 bg-railway-700 text-white flex items-center justify-center text-2xl font-bold tracking-wider">
+                        SAYI #01
+                    </div>
+                    <div class="p-6 space-y-3">
+                        <h3 class="text-xl font-bold text-railway-700">1. Sayı: İlk Durak</h3>
+                        <p class="text-gray-600 text-sm">İlk sayımız yayınlandı! Ekibimizin öykü, şiir ve denemelerini hemen site içinde okuyun.</p>
+                    </div>
+                </div>
+                <div class="p-6 pt-0">
+                    <!-- Tıklandığında PDF modalını açan buton (dosya adını sayi1.pdf olarak varsaydık) -->
+                    <button onclick="openPdfModal('sayi1.pdf', '1. Sayı: İlk Durak')" class="w-full bg-railway-accent text-white py-3 rounded-xl text-sm font-semibold hover:bg-orange-600 transition-colors shadow-md">
+                        Sitede Oku 📖
+                    </button>
                 </div>
             </div>
-        </section>
+        </div>
     </main>
 
-    <footer class="bg-railway-700 text-white py-12">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-4">
-            <p class="text-sm text-gray-400">© 2026 5 18 Treni Okul Dergisi. Tüm hakları saklıdır.</p>
+    <!-- SITE İÇİ PDF OKUYUCU PENCERESİ (MODAL) -->
+    <div id="pdfModal" class="fixed inset-0 bg-black/80 backdrop-blur-md z-50 hidden flex-col p-4 sm:p-8">
+        <div class="bg-white rounded-2xl w-full h-full max-w-6xl mx-auto flex flex-col overflow-hidden shadow-2xl">
+            <!-- Modal Başlık Barı -->
+            <div class="p-4 bg-railway-700 text-white flex items-center justify-between">
+                <h2 id="pdfTitle" class="font-bold text-lg">Dergi Okuyucu</h2>
+                <button onclick="closePdfModal()" class="bg-white/20 hover:bg-white/30 text-white px-4 py-2 rounded-xl text-sm font-semibold transition-colors">
+                    ✕ Kapat
+                </button>
+            </div>
+            <!-- PDF Alanı -->
+            <div class="flex-1 bg-gray-100">
+                <iframe id="pdfFrame" class="w-full h-full border-none" src=""></iframe>
+            </div>
+        </div>
+    </div>
+
+    <footer class="bg-railway-700 text-white py-12 mt-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <p class="text-sm text-gray-400">© 2026 5 18 Treni Okul Dergisi.</p>
         </div>
     </footer>
 
     <script>
         function toggleSidebar() {
-            const sidebar = document.getElementById('sidebar');
-            const overlay = document.getElementById('sidebarOverlay');
-            
-            sidebar.classList.toggle('-translate-x-full');
-            overlay.classList.toggle('hidden');
+            document.getElementById('sidebar').classList.toggle('-translate-x-full');
+            document.getElementById('sidebarOverlay').classList.toggle('hidden');
+        }
+
+        // PDF Açma Fonksiyonu
+        function openPdfModal(pdfUrl, title) {
+            document.getElementById('pdfTitle').innerText = title;
+            document.getElementById('pdfFrame').src = pdfUrl;
+            document.getElementById('pdfModal').classList.remove('hidden');
+            document.getElementById('pdfModal').classList.add('flex');
+        }
+
+        // PDF Kapatma Fonksiyonu
+        function closePdfModal() {
+            document.getElementById('pdfModal').classList.add('hidden');
+            document.getElementById('pdfModal').classList.remove('flex');
+            document.getElementById('pdfFrame').src = '';
         }
     </script>
 </body>
